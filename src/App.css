@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://lightt-ui.netlify.app/lightui.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style-type: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* :root {
+ 
+  --input-color: #313131;
+  --secondary-bg-color: #ff99dc;
+  --bg-container-color: hsl(0, 0%, 22%);
+  --sidebar-text-color: rgb(217 217 217);
+  --bg-color: rgb(53, 53, 53);
+  --white-color: rgb(48 47 47);
+  --bg-input-color: #f2f2f6;
+  --bg-color-nav: #f2f2f6;
+  --bg-color-link-active: rgb(110, 110, 110);
+  --bg-color-link-hover: rgb(69 69 69);
+  --text-secondary-color: #ffff;
+  --heading-text-color: #333333;
+  --bg-btn-signup-color: #ececec;
+  --color-heading: rgb(217 217 217);
+  --bg-input-color: #282828;
+  --input-color: rgb(217 217 217);
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --input-color: #313131;
+    --secondary-bg-color: #ff99dc;
+    --bg-container-color: hsl(0, 0%, 22%);
+    --sidebar-text-color: rgb(217 217 217);
+    --bg-color: rgb(53, 53, 53);
+    --white-color: rgb(48 47 47);
+    --bg-input-color: #f2f2f6;
+    --bg-color-nav: #f2f2f6;
+    --bg-color-link-active: rgb(110, 110, 110);
+    --bg-color-link-hover: rgb(69 69 69);
+    --text-secondary-color: #ffff;
+    --heading-text-color: #333333;
+    --bg-btn-signup-color: #ececec;
+    --color-heading: rgb(217 217 217);
+    --bg-input-color: #282828;
+    --input-color: rgb(217 217 217);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  font-family: "Poppins";
+  background: var(--bg-container-color);
 }
 
-.App-link {
-  color: #61dafb;
+.main-container {
+  grid-area: main;
+  background-color: var(--bg-container-color);
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header "
+    "main main ";
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: 4rem;
+}
+
+@media only screen and (max-width: 780px) {
+  .main-grid-container {
+    display: grid;
+    grid-template-areas:
+      "sidebar header "
+      "sidebar main ";
+    grid-template-columns: 5rem 1fr;
+    grid-template-rows: 4rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media only screen and (max-width: 480px) {
+  .main-grid-container {
+    display: grid;
+    grid-template-areas:
+      "header "
+      "main "
+      "mobile";
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
   }
 }

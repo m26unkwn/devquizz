@@ -1,0 +1,28 @@
+/** @format */
+
+.category-wrapper {
+  margin: 2rem 0;
+}
+
+.category-title {
+  margin-bottom: 2rem;
+  color: Var(--color-heading);
+  text-decoration: underline;
+  text-align: center;
+}
+
+.category-card-wrapper {
+  gap: 4rem;
+}
+@media only screen and (max-width: 780px) {
+  .category-card-wrapper {
+    gap: 3rem;
+    row-gap: 3rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .category-card-wrapper {
+    gap: 1rem;
+    row-gap: 10rem;
+  }
+}

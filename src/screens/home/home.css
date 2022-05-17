@@ -1,0 +1,10 @@
+/** @format */
+
+.main-container {
+  grid-area: main;
+  background-color: var(--bg-container-color);
+  height: 100vh;
+}
+.home-wrapper {
+  margin: 2rem;
+}
