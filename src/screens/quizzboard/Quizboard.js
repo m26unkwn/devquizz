@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Question } from "../../components";
+import { useQuiz } from "../../context";
 import "./quizboard.css";
 
 const quizData = [
@@ -179,34 +180,61 @@ const quizData = [
 
 export const Quizboard = () => {
   const { categoryId } = useParams();
+  const {
+    quizState: { answer },
+    quizDispatch,
+  } = useQuiz();
 
   const [index, setIndex] = useState(0);
-  const [timer, setTimer] = useState(5);
+  const [timer, setTimer] = useState(15);
 
   const filterData = quizData.find(
     (quiz) => quiz.name.toLocaleLowerCase() === categoryId.toLocaleLowerCase(),
   );
 
+  const ref = useRef();
+
+  const stopThread = (time) => {
+    return new Promise((resolve) => setTimeout(() => resolve(1), time));
+  };
+
   useEffect(() => {
+    ref.current = true;
     let id;
-    if (!(index === filterData.questions.length - 1)) {
-      if (timer === 0) {
-        setIndex((prev) => prev + 1);
-        setTimer(5);
+    if (ref.current) {
+      if (!(index === filterData.questions.length - 1)) {
+        if (answer.length > 0) {
+          (async function () {
+            await stopThread(2000);
+            setIndex((prev) => prev + 1);
+            quizDispatch({ type: "ADD_ANSWER", answer: "" });
+            setTimer(15);
+          })();
+        }
+        if (timer === 0) {
+          setTimer(5);
+          setIndex((prev) => prev + 1);
+          quizDispatch({ type: "ADD_ANSWER", answer: "" });
+        }
+      }
+
+      if (!(index === filterData.questions.length - 1 && timer === 0)) {
+        id = setTimeout(() => setTimer((prev) => prev - 1), 1000);
+      } else {
+        alert("hello world");
       }
     }
-    if (!(index === filterData.questions.length - 1 && timer === 0)) {
-      id = setTimeout(() => setTimer((prev) => prev - 1), 1000);
-    }
-    return () => clearTimeout(id);
-  }, [timer]);
 
-  console.log(index);
+    return () => {
+      clearTimeout(id);
+
+      ref.current = false;
+    };
+  }, [timer]);
 
   return (
     <div className='main-container quiz-board'>
       <div className='timer-wrapper flex jc-between ai-center'>
-        {" "}
         <div className='question-number'>
           <h1>
             Question <span>{index + 1}/4</span>

@@ -6,10 +6,10 @@ import App from "./App";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import {
-  VideoProvider,
   AuthProvider,
   ToastProvider,
   ScrollToTopProvider,
+  QuizProvider,
 } from "./context";
 
 // Call make Server
@@ -17,7 +17,7 @@ import {
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <VideoProvider>
+      <QuizProvider>
         <AuthProvider>
           <ToastProvider>
             <ScrollToTopProvider>
@@ -25,7 +25,7 @@ ReactDOM.render(
             </ScrollToTopProvider>
           </ToastProvider>
         </AuthProvider>
-      </VideoProvider>
+      </QuizProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root"),
