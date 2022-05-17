@@ -1,13 +1,22 @@
 /** @format */
 
-.category-btn {
+.option-btn {
   all: unset;
-  padding: 0.4rem 1rem;
+  padding: 1rem;
   border-radius: 40px;
   font-weight: 600;
   border: 2px solid var(--primary-color);
   cursor: pointer;
+  width: 28rem;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: black;
 }
+.option-btn:active {
+  transition: 1000ms;
+}
+
 .allvideos {
   background-color: var(--primary-color);
   color: white;
