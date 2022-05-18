@@ -5,12 +5,12 @@ import { useAuth } from "../../context";
 import "./profile.css";
 
 export const Profile = () => {
-  const {
-    authState: { userDetails },
-    logoutUser,
-  } = useAuth();
+  // const {
+  //   authState: { userDetails },
+  //   logoutUser,
+  // } = useAuth();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className='main-container'>
@@ -24,18 +24,18 @@ export const Profile = () => {
             <div style={{ gap: "2rem" }} className='flex flex-col flex-gap'>
               <div className='flex flex-gap jc-between'>
                 <h4>Full Name : </h4>
-                <h4>
-                  {userDetails.firstName} {userDetails.lastName}
-                </h4>
+                <h4>Hello</h4>
               </div>
               <div className='flex flex-gap jc-between'>
                 <h4>Email Address : </h4>
-                <h4>{userDetails.email}</h4>
+                <h4>monushukla@gmail.com</h4>
               </div>
             </div>
             <button
               style={{ marginTop: "2rem" }}
-              onClick={(e) => logoutUser(e, navigate)}
+              onClick={(e) => {
+                console.log("hello wolrd");
+              }}
               className='btn outline-primary'>
               Logout
             </button>

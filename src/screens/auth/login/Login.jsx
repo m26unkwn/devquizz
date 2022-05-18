@@ -30,7 +30,7 @@ export const Login = () => {
     e.preventDefault();
 
     if (loginValidation(loginState, dispatch)) {
-      getUserLogin(loginState.email, loginState.password);
+     alert("Hello")
     }
   };
 

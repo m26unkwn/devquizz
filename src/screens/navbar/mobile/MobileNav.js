@@ -26,7 +26,6 @@ export const MobileNav = () => {
                 isActive ? "mobile-items mobile-link-active " : "mobile-items"
               }>
               <img src={Home} alt='home_icon' />
-              <span className='nav-title'>Home</span>
             </NavLink>
             <NavLink
               to='/explore'
@@ -34,7 +33,6 @@ export const MobileNav = () => {
                 isActive ? "mobile-items mobile-link-active " : "mobile-items"
               }>
               <img src={Explore} alt='home_icon' />
-              <span className='nav-title'>Explore</span>
             </NavLink>
             <NavLink
               to='/playlist'
@@ -42,7 +40,6 @@ export const MobileNav = () => {
                 isActive ? "mobile-items mobile-link-active " : "mobile-items"
               }>
               <img src={Playlist} alt='home_icon' />
-              <span className='nav-title'>Playlist</span>
             </NavLink>
             <NavLink
               to='/likedvedios'
@@ -50,7 +47,6 @@ export const MobileNav = () => {
                 isActive ? "mobile-items mobile-link-active " : "mobile-items"
               }>
               <img src={Like} width='24px' alt='home_icon' />
-              <span className='nav-title'>Liked Videos</span>
             </NavLink>
             <NavLink
               to='/watchlater'
@@ -58,7 +54,6 @@ export const MobileNav = () => {
                 isActive ? "mobile-items mobile-link-active " : "mobile-items"
               }>
               <img src={WatchLater} alt='home_icon' />
-              <span className='nav-title'>Watch Later</span>
             </NavLink>
             <NavLink
               to='/history'
@@ -66,7 +61,6 @@ export const MobileNav = () => {
                 isActive ? "mobile-items mobile-link-active " : "mobile-items"
               }>
               <img src={History} alt='home_icon' />
-              <span className='nav-title'>History</span>
             </NavLink>
           </div>
         </div>

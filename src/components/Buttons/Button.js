@@ -3,11 +3,12 @@
 import React from "react";
 import "./button.css";
 
-export const Button = ({ title, filterDispatch, filter, param }) => {
+export const Button = ({ title, getAnswer, changeColor, selectedAnswer }) => {
   return (
     <button
-      onClick={(e) => filterDispatch(e, param)}
-      className={`category-btn ${filter === param ? filter : ""}`}>
+      disabled={selectedAnswer.length > 0}
+      onClick={() => getAnswer(title)}
+      className={`btn option-btn ${changeColor(title)}`}>
       {title}
     </button>
   );

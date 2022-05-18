@@ -1,0 +1,14 @@
+.quiz-board {
+  margin: auto;
+  color: white;
+  margin-top: 5rem;
+}
+.timer {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 8px solid var(--primary-color);
+  border-radius: 50%;
+}

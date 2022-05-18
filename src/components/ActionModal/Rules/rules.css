@@ -1,0 +1,18 @@
+.rules-container {
+  padding: 10px 2rem;
+  width: 30rem;
+  font-size: 1.5rem;
+  color: rgb(173, 173, 173);
+}
+.close-modal {
+  border: none;
+  background: none;
+}
+.rules > li {
+  font-size: 1rem;
+  list-style-type: number;
+}
+
+.rules-btn > button {
+  color: white;
+}

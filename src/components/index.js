@@ -7,5 +7,7 @@ export { Loader } from "./Loader/Loader";
 export { Hero } from "./Hero/Hero";
 export { Card } from "./Cards/like/Card";
 export { PrivateRoute } from "./PrivateRoute/PrivateRoute";
-export { Toast } from "./Toast/Toast";
 export { Modal } from "./Modal/Modal";
+export { Question } from "./Question/Question";
+export { Rules } from "./ActionModal/Rules/Rules";
+export { ShowScore } from "./ActionModal/Score/Score";
