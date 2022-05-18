@@ -17,7 +17,7 @@ export const Rules = ({ setStartQuiz }) => {
       <div className='card-head flex ai-center'>
         <h2>Rules</h2>
         <button className='btn close-modal' onClick={navigateToHome}>
-          <CloseIcon fill='rgb(63, 63, 63)' width='30' height='30' />
+          <CloseIcon fill='white' width='30' height='30' />
         </button>
       </div>
       <div className='card-content'>

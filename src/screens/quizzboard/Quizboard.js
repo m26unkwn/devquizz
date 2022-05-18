@@ -191,7 +191,7 @@ export const Quizboard = () => {
   } = useQuiz();
 
   const [index, setIndex] = useState(0);
-  const [timer, setTimer] = useState(5);
+  const [timer, setTimer] = useState(15);
   const [startQuiz, setStartQuiz] = useState(false);
   const [showScore, setShowScore] = useState(false);
 
@@ -204,7 +204,7 @@ export const Quizboard = () => {
       stopThread(1000).then(() => {
         quizDispatch({ type: "ADD_ANSWER", selectedAnswer: "" });
         setIndex((prev) => prev + 1);
-        setTimer(6);
+        setTimer(15);
       });
     }
   }, [selectedAnswer]);
@@ -215,7 +215,7 @@ export const Quizboard = () => {
       if (!(index === filterData.questions.length - 1)) {
         stopThreadExecution();
         if (timer === 0) {
-          setTimer(5);
+          setTimer(15);
           setIndex((prev) => prev + 1);
           quizDispatch({ type: "ADD_ANSWER", selectedAnswer: "" });
         }
@@ -225,6 +225,7 @@ export const Quizboard = () => {
         (index === filterData.questions.length - 1 && timer === 0)
       ) {
         setShowScore(true);
+        setTimer(0);
       }
       if (!(index === filterData.questions.length - 1 && timer === 0)) {
         id = setTimeout(() => setTimer((prev) => prev - 1), 1000);

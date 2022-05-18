@@ -1,3 +1,10 @@
 .score-head {
   padding: none;
 }
+.score-container {
+  width: 30rem;
+}
+.score-btn > button {
+  color: white;
+  margin-bottom: 4rem;
+}

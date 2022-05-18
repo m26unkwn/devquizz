@@ -16,6 +16,8 @@ export const Question = (props) => {
         return "right-answer";
       } else if (answer !== selectedAnswer && selectedAnswer === title) {
         return "wrong-answer";
+      } else if (title === answer) {
+        return "right-answer";
       }
     }
     return "";
