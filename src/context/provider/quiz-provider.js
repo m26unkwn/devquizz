@@ -1,12 +1,12 @@
 /** @format */
 
-import { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { quizReducer } from "../reducer/quiz-reducer";
 
 const quizContext = createContext();
 
 let quizIntialState = {
-  answer: "",
+  selectedAnswer: "",
   score: 0,
 };
 

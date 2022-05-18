@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import { Question } from "../../components";
+import { Question, ShowScore } from "../../components";
 import { useQuiz } from "../../context";
 import "./quizboard.css";
+import { Modal, Rules } from "../../components";
 
 const quizData = [
   {
@@ -106,7 +107,7 @@ const quizData = [
       {
         _id: "9dd64af8-6b60-4ad9-90e6-f7e0d1c404da",
         question: "Which of the following is not an HTML element?",
-        options: ["<q>", "<y>", "<q>"],
+        options: ["<q>", "<y>", "<s>"],
         answer: "<y>",
       },
       {
@@ -178,59 +179,61 @@ const quizData = [
   },
 ];
 
+const stopThread = (time) => {
+  return new Promise((resolve) => setTimeout(() => resolve(1), time));
+};
+
 export const Quizboard = () => {
   const { categoryId } = useParams();
   const {
-    quizState: { answer },
+    quizState: { selectedAnswer },
     quizDispatch,
   } = useQuiz();
 
   const [index, setIndex] = useState(0);
-  const [timer, setTimer] = useState(15);
+  const [timer, setTimer] = useState(5);
+  const [startQuiz, setStartQuiz] = useState(false);
+  const [showScore, setShowScore] = useState(false);
 
   const filterData = quizData.find(
     (quiz) => quiz.name.toLocaleLowerCase() === categoryId.toLocaleLowerCase(),
   );
 
-  const ref = useRef();
-
-  const stopThread = (time) => {
-    return new Promise((resolve) => setTimeout(() => resolve(1), time));
-  };
+  let stopThreadExecution = useCallback(() => {
+    if (selectedAnswer.length > 0) {
+      stopThread(1000).then(() => {
+        quizDispatch({ type: "ADD_ANSWER", selectedAnswer: "" });
+        setIndex((prev) => prev + 1);
+        setTimer(6);
+      });
+    }
+  }, [selectedAnswer]);
 
   useEffect(() => {
-    ref.current = true;
     let id;
-    if (ref.current) {
+    if (startQuiz) {
       if (!(index === filterData.questions.length - 1)) {
-        if (answer.length > 0) {
-          (async function () {
-            await stopThread(2000);
-            setIndex((prev) => prev + 1);
-            quizDispatch({ type: "ADD_ANSWER", answer: "" });
-            setTimer(15);
-          })();
-        }
+        stopThreadExecution();
         if (timer === 0) {
           setTimer(5);
           setIndex((prev) => prev + 1);
-          quizDispatch({ type: "ADD_ANSWER", answer: "" });
+          quizDispatch({ type: "ADD_ANSWER", selectedAnswer: "" });
         }
+      } else if (
+        (index === filterData.questions.length - 1 &&
+          selectedAnswer.length > 0) ||
+        (index === filterData.questions.length - 1 && timer === 0)
+      ) {
+        setShowScore(true);
       }
-
       if (!(index === filterData.questions.length - 1 && timer === 0)) {
         id = setTimeout(() => setTimer((prev) => prev - 1), 1000);
-      } else {
-        alert("hello world");
       }
     }
-
     return () => {
       clearTimeout(id);
-
-      ref.current = false;
     };
-  }, [timer]);
+  }, [timer, startQuiz]);
 
   return (
     <div className='main-container quiz-board'>
@@ -244,6 +247,16 @@ export const Quizboard = () => {
       </div>
 
       <Question question={filterData.questions[index]} />
+      {!startQuiz && (
+        <Modal>
+          <Rules setStartQuiz={setStartQuiz} />
+        </Modal>
+      )}
+      {showScore && (
+        <Modal>
+          <ShowScore />
+        </Modal>
+      )}
     </div>
   );
 };

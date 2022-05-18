@@ -2,18 +2,12 @@
 
 import "./modal.css";
 
-export const Modal = ({ children, setState, modalClass }) => {
-  const closeModal = (e) => {
-    if (e.target.classList.contains("modal-backdrop")) {
-      setState(false);
-    }
-  };
+export const Modal = ({ children, modalClass }) => {
   return (
     <div
       className={`${
         modalClass ? modalClass : "modal-backdrop"
-      } flex ai-center jc-center`}
-      onClick={(e) => closeModal(e)}>
+      } flex ai-center jc-center`}>
       {children}
     </div>
   );
