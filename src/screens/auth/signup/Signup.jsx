@@ -14,6 +14,7 @@ export const Signup = () => {
   const [signupState, dispatch] = useReducer(signUpReducer, signupInitialData);
   const {
     authState: { token, authError },
+    getUserSignup,
   } = useAuth();
 
   const onChangeHandler = (e, type) => {
@@ -23,7 +24,7 @@ export const Signup = () => {
   const signupUser = (e) => {
     e.preventDefault();
     if (signupValidation(signupState, dispatch)) {
-      alert("Form is Valid");
+      getUserSignup(signupState.email, signupState.password);
     }
   };
 

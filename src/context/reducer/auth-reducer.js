@@ -2,10 +2,13 @@
 
 export default function authReducer(state, action) {
   switch (action.type) {
-    case "ADD_TOKEN":
-      return { ...state, token: action.payload };
-    case "ADD_USER_DATA":
-      return { ...state, userDetails: action.payload };
+    case "ADD_AUTH_DATA":
+      return {
+        ...state,
+        token: action.payload.token,
+        userDetails: action.payload.userData,
+      };
+
     case "ADD_LOGIN_ERROR":
       return {
         ...state,

@@ -5,12 +5,12 @@ import { useAuth } from "../../context";
 import "./profile.css";
 
 export const Profile = () => {
-  // const {
-  //   authState: { userDetails },
-  //   logoutUser,
-  // } = useAuth();
+  const {
+    authState: { userDetails },
+    logoutUser,
+  } = useAuth();
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div className='main-container'>
@@ -33,10 +33,8 @@ export const Profile = () => {
             </div>
             <button
               style={{ marginTop: "2rem" }}
-              onClick={(e) => {
-                console.log("hello wolrd");
-              }}
-              className='btn outline-primary'>
+              onClick={(e) => logoutUser(e, navigate)}
+              className='btn logout-user outline-primary'>
               Logout
             </button>
           </div>

@@ -11,8 +11,7 @@
   list-style-type: none;
 }
 
-/* :root {
- 
+:root {
   --input-color: #313131;
   --secondary-bg-color: #ff99dc;
   --bg-container-color: hsl(0, 0%, 22%);
@@ -29,27 +28,6 @@
   --color-heading: rgb(217 217 217);
   --bg-input-color: #282828;
   --input-color: rgb(217 217 217);
-} */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --input-color: #313131;
-    --secondary-bg-color: #ff99dc;
-    --bg-container-color: hsl(0, 0%, 22%);
-    --sidebar-text-color: rgb(217 217 217);
-    --bg-color: rgb(53, 53, 53);
-    --white-color: rgb(48 47 47);
-    --bg-input-color: #f2f2f6;
-    --bg-color-nav: #f2f2f6;
-    --bg-color-link-active: rgb(110, 110, 110);
-    --bg-color-link-hover: rgb(69 69 69);
-    --text-secondary-color: #ffff;
-    --heading-text-color: #333333;
-    --bg-btn-signup-color: #ececec;
-    --color-heading: rgb(217 217 217);
-    --bg-input-color: #282828;
-    --input-color: rgb(217 217 217);
-  }
 }
 
 body {

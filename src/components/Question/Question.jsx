@@ -4,7 +4,7 @@ import { Button } from "../Buttons/Button";
 import "./question.css";
 
 export const Question = (props) => {
-  const { question, options, answer } = props.question;
+  const { question, options, answer } = props?.question;
   const {
     quizState: { selectedAnswer },
     quizDispatch,
@@ -14,7 +14,8 @@ export const Question = (props) => {
     if (selectedAnswer.length > 0) {
       if (answer === selectedAnswer && selectedAnswer === title) {
         return "right-answer";
-      } else if (answer !== selectedAnswer && selectedAnswer === title) {
+      }
+      if (answer !== selectedAnswer && selectedAnswer === title) {
         return "wrong-answer";
       } else if (title === answer) {
         return "right-answer";

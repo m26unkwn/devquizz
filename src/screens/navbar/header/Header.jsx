@@ -4,7 +4,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../../context";
 import "./header.css";
-import { Logo, Profile, Home } from "../../../assets";
+import { Logo, Profile } from "../../../assets";
 
 export const Header = () => {
   const {
@@ -27,7 +27,7 @@ export const Header = () => {
       </div>
 
       {!token ? (
-        <div className='auth-action-wrapper flex jc-between'>
+        <div className='auth-action-wrapper flex jc-between flex-gap'>
           <Link to='/login' className='btn  login-btn'>
             Login
           </Link>

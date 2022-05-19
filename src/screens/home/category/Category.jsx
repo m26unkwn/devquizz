@@ -4,7 +4,6 @@ import React from "react";
 import "./category.css";
 
 import { CategoryCard } from "../../../components";
-import { useAxios } from "../../../hooks";
 import { Javascript, ReactLogo, CssLogo, HtmlLogo } from "../../../assets";
 
 /**

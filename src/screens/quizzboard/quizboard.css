@@ -11,4 +11,12 @@
   align-items: center;
   border: 8px solid var(--primary-color);
   border-radius: 50%;
+  font-weight: bold;
+}
+.loading-indicator {
+  color: var(--color-heading);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

@@ -7,7 +7,7 @@ export const quizReducer = (state, action) => {
     case "ADD_SCORE":
       return { ...state, score: Number(state.score + action.score) };
     case "CLEAR_SCORE":
-      return { selectedAnswer: "", score: "" };
+      return { selectedAnswer: "", score: 0 };
     default:
       return state;
   }

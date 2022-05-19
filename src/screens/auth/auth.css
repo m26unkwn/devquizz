@@ -41,6 +41,7 @@
 .auth-action > button {
   font-weight: 700;
   width: 100%;
+  color: var(--color-heading);
 }
 
 .relative {

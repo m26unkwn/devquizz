@@ -30,7 +30,7 @@ export const Login = () => {
     e.preventDefault();
 
     if (loginValidation(loginState, dispatch)) {
-     alert("Hello")
+      getUserLogin(loginState.email, loginState.password);
     }
   };
 
@@ -40,7 +40,7 @@ export const Login = () => {
 
   const testUserLogin = (e) => {
     e.preventDefault();
-    getUserLogin("adarshbalika@gmail.com", "adarshBalikaQa!1");
+    getUserLogin("adarshbalika@gmail.com", "Qa!ws@ed#f1");
   };
 
   return (

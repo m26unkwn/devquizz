@@ -1,5 +1,4 @@
 /** @format */
-import { Link } from "react-router-dom";
 import "./hero.css";
 
 export const Hero = () => {
