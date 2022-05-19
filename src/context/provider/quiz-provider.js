@@ -20,6 +20,7 @@ const quizContext = createContext();
 let quizIntialState = {
   selectedAnswer: "",
   score: 0,
+  quizAnswers: [],
 };
 
 const QuizProvider = ({ children }) => {

@@ -1,0 +1,12 @@
+.answer-container {
+  color: white;
+  margin: auto;
+  width: 30rem;
+  margin-top: 5rem;
+}
+.score-wrapper {
+}
+.score {
+  font-weight: bold;
+  font-size: 2rem;
+}

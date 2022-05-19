@@ -2,14 +2,17 @@ import React from "react";
 import { ReactComponent as CloseIcon } from "../../../assets/Close.svg";
 import { useNavigate } from "react-router-dom";
 import "./rules.css";
+import { useQuiz } from "../../../context";
 
 export const Rules = ({ setStartQuiz }) => {
+  const { quizDispatch } = useQuiz();
   const navigate = useNavigate();
   const navigateToHome = () => {
     navigate("/");
   };
   const startQuiz = () => {
     setStartQuiz((prev) => !prev);
+    quizDispatch({ type: "CLEAR_SCORE" });
   };
 
   return (

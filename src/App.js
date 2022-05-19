@@ -10,6 +10,7 @@ import {
   Login,
   RouteError,
   Quizboard,
+  QuizAnswer,
 } from "./screens";
 import { PrivateRoute } from "./components";
 import { ToastContainer } from "react-toastify";
@@ -25,7 +26,13 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/category/:categoryId' element={<Quizboard />} />
+        <Route path='/category'>
+          <Route path='/category/:categoryId' element={<Quizboard />} />
+          <Route
+            path='/category/:categoryId/answers'
+            element={<QuizAnswer />}
+          />
+        </Route>
         <Route path='*' element={<RouteError />} />
 
         <Route

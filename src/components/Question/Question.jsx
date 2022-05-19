@@ -25,6 +25,10 @@ export const Question = (props) => {
   }
   const getAnswer = (title) => {
     quizDispatch({ type: "ADD_ANSWER", selectedAnswer: title });
+    quizDispatch({
+      type: "STORE_ANSWER",
+      quizAnswers: { ...props.question, selectedAnswer: title },
+    });
   };
 
   useEffect(() => {
@@ -43,9 +47,9 @@ export const Question = (props) => {
           <Button
             title={option}
             getAnswer={getAnswer}
-            changeColor={changeColor}
-            selectedAnswer={selectedAnswer}
+            selectedAnswer={props.answer ? props.answer : selectedAnswer}
             key={option}
+            correctAnswer={answer}
           />
         ))}
       </div>

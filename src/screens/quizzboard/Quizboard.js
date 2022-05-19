@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import { Question, ShowScore } from "../../components";
+import { Answers, Question, ShowScore } from "../../components";
 import { useQuiz } from "../../context";
 import "./quizboard.css";
 import { Modal, Rules } from "../../components";
-
 
 const stopThread = (time) => {
   return new Promise((resolve) => setTimeout(() => resolve(1), time));
@@ -22,6 +21,7 @@ export const Quizboard = () => {
   const [timer, setTimer] = useState(15);
   const [startQuiz, setStartQuiz] = useState(false);
   const [showScore, setShowScore] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(false);
 
   const filterData = quizData?.find(
     (quiz) => quiz.name.toLocaleLowerCase() === categoryId.toLocaleLowerCase(),
@@ -77,7 +77,7 @@ export const Quizboard = () => {
             <div className='timer'>{timer}</div>
           </div>
 
-          <Question question={filterData?.questions[index]} />
+          <Question index={index} question={filterData?.questions[index]} />
           {!startQuiz && (
             <Modal>
               <Rules setStartQuiz={setStartQuiz} />
@@ -85,7 +85,7 @@ export const Quizboard = () => {
           )}
           {showScore && (
             <Modal>
-              <ShowScore />
+              <ShowScore id={categoryId} />
             </Modal>
           )}
         </div>
