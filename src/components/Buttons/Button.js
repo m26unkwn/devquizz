@@ -2,23 +2,24 @@
 
 import React from "react";
 import "./button.css";
-import { changeColor } from "../../utils/change-color";
+import { changeColor, answerChangeColor } from "../../utils/change-color";
 
 export const Button = ({
   title,
   getAnswer,
   correctAnswer,
   selectedAnswer,
+  answers,
 }) => {
+  let buttonColor = answers
+    ? answerChangeColor(title, selectedAnswer, correctAnswer)
+    : changeColor(title, selectedAnswer, correctAnswer);
+
   return (
     <button
       disabled={selectedAnswer.length > 0}
-      onClick={() => getAnswer(title)}
-      className={`btn option-btn ${changeColor(
-        title,
-        selectedAnswer,
-        correctAnswer,
-      )}`}>
+      onClick={() => getAnswer && getAnswer(title)}
+      className={`btn option-btn ${buttonColor}`}>
       {title}
     </button>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useQuiz } from "../../context";
 import { Button } from "../Buttons/Button";
 import "./question.css";
@@ -10,21 +10,26 @@ export const Question = (props) => {
     quizDispatch,
   } = useQuiz();
 
-  const getAnswer = (title) => {
-    quizDispatch({ type: "ADD_ANSWER", selectedAnswer: title });
+  const getAnswer = (userAnswer) => {
+    quizDispatch({ type: "ADD_ANSWER", selectedAnswer: userAnswer });
     quizDispatch({
       type: "STORE_ANSWER",
-      quizAnswers: { ...props.question, selectedAnswer: title },
+      quizAnswers: { ...props.question, selectedAnswer: userAnswer },
     });
+
+    if (answer === userAnswer) {
+      quizDispatch({ type: "ADD_SCORE", score: 5 });
+    }
   };
 
-  useEffect(() => {
-    if (selectedAnswer.length > 0) {
-      if (answer === selectedAnswer) {
-        quizDispatch({ type: "ADD_SCORE", score: 5 });
-      }
-    }
-  }, [selectedAnswer]);
+  // useEffect(() => {
+  //   if (selectedAnswer === "") {
+  //     quizDispatch({
+  //       type: "STORE_ANSWER",
+  //       quizAnswers: { ...props.question, selectedAnswer: "" },
+  //     });
+  //   }
+  // }, [selectedAnswer]);
 
   return (
     <div className='question-wrapper'>
@@ -34,7 +39,7 @@ export const Question = (props) => {
           <Button
             title={option}
             getAnswer={getAnswer}
-            selectedAnswer={props.answer ? props.answer : selectedAnswer}
+            selectedAnswer={selectedAnswer}
             key={option}
             correctAnswer={answer}
           />
