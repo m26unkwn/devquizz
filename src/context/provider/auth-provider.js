@@ -30,7 +30,6 @@ const AuthProvider = ({ children }) => {
         email,
         password,
       );
-      console.log(response);
       authDispatch({
         type: "ADD_AUTH_DATA",
         payload: {
@@ -52,7 +51,6 @@ const AuthProvider = ({ children }) => {
         email,
         password,
       );
-      console.log(response);
       authDispatch({
         type: "ADD_AUTH_DATA",
         payload: {

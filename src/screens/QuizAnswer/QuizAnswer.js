@@ -7,7 +7,6 @@ export const QuizAnswer = () => {
   const {
     quizState: { score, quizAnswers },
   } = useQuiz();
-  console.log(quizAnswers);
   return (
     <div className='main-container answer-container'>
       {quizAnswers.length > 0 ? (

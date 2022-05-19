@@ -10,19 +10,6 @@ export const Question = (props) => {
     quizDispatch,
   } = useQuiz();
 
-  function changeColor(title) {
-    if (selectedAnswer.length > 0) {
-      if (answer === selectedAnswer && selectedAnswer === title) {
-        return "right-answer";
-      }
-      if (answer !== selectedAnswer && selectedAnswer === title) {
-        return "wrong-answer";
-      } else if (title === answer) {
-        return "right-answer";
-      }
-    }
-    return "";
-  }
   const getAnswer = (title) => {
     quizDispatch({ type: "ADD_ANSWER", selectedAnswer: title });
     quizDispatch({

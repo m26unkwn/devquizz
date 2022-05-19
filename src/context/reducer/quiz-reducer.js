@@ -7,7 +7,6 @@ export const quizReducer = (state, action) => {
     case "ADD_SCORE":
       return { ...state, score: Number(state.score + action.score) };
     case "STORE_ANSWER":
-      console.log(action.quizAnswers);
       return {
         ...state,
         quizAnswers: [...state.quizAnswers, action.quizAnswers],
