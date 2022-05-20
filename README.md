@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Dev Quizz in React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Devquizz is a Quiz App, where users can play quizzes by category.
 
-## Available Scripts
+## Authors
 
-In the project directory, you can run:
+- [@Monu](https://twitter.com/getumank)
 
-### `npm start`
+## Live App link
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Magnificent Quiz](https://dev-quizz.netlify.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies used
 
-### `npm test`
+- HTML
+- CSS
+- JavaScript
+- ReactJS
+- Firebase (for backend)
+## Features and Functionalities
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Home page :
 
-### `npm run build`
+    - Login button
+    - Categories of quizz
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Rules Page (Modal) :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    - a modal listing rules 
+    - Start quiz button
+### 3 Quiz Page:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Play the quiz having 15 second timer for each question.
+    UI 
+    - Image related to question
+    - timer showing countdown
+    - question number
+    - score
 
-### `npm run eject`
+    Functionality
+    - select the answer
+    - if correct show's green color
+    - if wrong show's red color
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 4. Quiz Score Board Modal:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - current score
+    - start new quiz button
+    - buttons to navigate to home.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 6. Sign Up page -
 
-## Learn More
+    - Input first and last name
+    - Input email address
+    - Input Password and verify password by click show password button
+    - confirm password
+    - Create new account button
+    - Already have an account button
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 7. Login page -
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    - Input Username
+    - Input password
+    - Login button
+    - Dummy login data preloaded
+    - Create a New Account button
 
-### Code Splitting
+### 8. Log out button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 9. Responsiveness
 
-### Analyzing the Bundle Size
+    - All pages are made responsive with respect to mobile screens with width greater than 320px
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## **How to run this app Locally**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To run this app locally on your machine, clone the repo to your local machine.
 
-### Advanced Configuration
+    1. `git clone https://github.com/m26unkwn/devquizz.git`
+    2. `cd devquizz`
+    In the project directory, you can run
+    3. `npm install`
+    4. `npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This will start the app in development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+Make sure you have access to internet to make use of the API call inside the App.
 
-### Deployment
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### 👨‍💻 Lets connect !
 
-### `npm run build` fails to minify
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://twitter.com/getumank/"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" width="93px"/></a>
+<a href="https://www.linkedin.com/in/monu-shukla/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" width="100px"/></a>
