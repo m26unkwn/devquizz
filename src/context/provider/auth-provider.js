@@ -37,6 +37,7 @@ const AuthProvider = ({ children }) => {
           userData: response.user.providerData[0],
         },
       });
+      console.log(response.user.providerData[0]);
       toast.success("Login Successfully");
     } catch (error) {
       console.log(error);

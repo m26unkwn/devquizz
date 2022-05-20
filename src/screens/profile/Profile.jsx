@@ -24,11 +24,11 @@ export const Profile = () => {
             <div style={{ gap: "2rem" }} className='flex flex-col flex-gap'>
               <div className='flex flex-gap jc-between'>
                 <h4>Full Name : </h4>
-                <h4>Hello</h4>
+                <h4>Guest</h4>
               </div>
               <div className='flex flex-gap jc-between'>
                 <h4>Email Address : </h4>
-                <h4>monushukla@gmail.com</h4>
+                <h4>{userDetails.email}</h4>
               </div>
             </div>
             <button
