@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuiz } from "../../context";
 import { Button } from "../Buttons/Button";
 import "./question.css";
@@ -22,14 +22,14 @@ export const Question = (props) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (selectedAnswer === "") {
-  //     quizDispatch({
-  //       type: "STORE_ANSWER",
-  //       quizAnswers: { ...props.question, selectedAnswer: "" },
-  //     });
-  //   }
-  // }, [selectedAnswer]);
+  useEffect(() => {
+    if (props.timer === 0) {
+      quizDispatch({
+        type: "STORE_ANSWER",
+        quizAnswers: { ...props.question, selectedAnswer: "" },
+      });
+    }
+  }, [props.timer]);
 
   return (
     <div className='question-wrapper'>

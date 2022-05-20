@@ -77,7 +77,7 @@ export const Quizboard = () => {
             <div className='timer'>{timer}</div>
           </div>
 
-          <Question index={index} question={filterData?.questions[index]} />
+          <Question timer={timer} question={filterData?.questions[index]} />
           {!startQuiz && (
             <Modal>
               <Rules setStartQuiz={setStartQuiz} />
