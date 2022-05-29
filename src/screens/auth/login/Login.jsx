@@ -40,7 +40,7 @@ export const Login = () => {
 
   const testUserLogin = (e) => {
     e.preventDefault();
-    getUserLogin("adarshbalika@gmail.com", "Qa!ws@ed#f1");
+    getUserLogin("monyoumail@gmail.com", "Qa!ws@ed#f1");
   };
 
   return (
