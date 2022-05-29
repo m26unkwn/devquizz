@@ -8,7 +8,7 @@ Devquizz is a Quiz App, where users can play quizzes by category.
 
 ## Live App link
 
-- [Magnificent Quiz](https://dev-quizz.netlify.app/)
+- [Dev Quiz](https://dev-quizz.netlify.app/)
 
 ## Technologies used
 

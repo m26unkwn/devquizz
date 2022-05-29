@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-.env
+
 # testing
 /coverage
 
@@ -14,7 +14,10 @@
 # misc
 .DS_Store
 .env
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4d77578c60c08de4659f4d0e907dd050b1ddde91
 .env.local
 .env.development.local
 .env.test.local
