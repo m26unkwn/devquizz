@@ -18,10 +18,9 @@ export const Quizboard = () => {
   } = useQuiz();
 
   const [index, setIndex] = useState(0);
-  const [timer, setTimer] = useState(15);
+  const [timer, setTimer] = useState(16);
   const [startQuiz, setStartQuiz] = useState(false);
   const [showScore, setShowScore] = useState(false);
-  const [showAnswer, setShowAnswer] = useState(false);
 
   const filterData = quizData?.find(
     (quiz) => quiz.name.toLocaleLowerCase() === categoryId.toLocaleLowerCase(),
